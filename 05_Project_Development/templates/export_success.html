@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <title>Export Successful</title>
+
+</head>
+
+<body>
+
+    <h1>🎉 Comic Export Successful!</h1>
+
+    {% if pdf_url %}
+
+        <p>
+            Your comic PDF is ready.
+        </p>
+
+        <a href="{{ pdf_url }}">
+            📥 Download Comic PDF
+        </a>
+
+    {% else %}
+
+        <p>
+            No PDF was generated.
+        </p>
+
+    {% endif %}
+
+    <br><br>
+
+    <a href="/">
+        Create Another Comic
+    </a>
+
+</body>
+
+</html>

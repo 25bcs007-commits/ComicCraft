@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+
+    <title>ComicCraftAI - Comic Preview</title>
+
+    <style>
+
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            padding: 30px;
+            font-family: Arial, sans-serif;
+            background: #eeeeee;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: auto;
+        }
+
+        h1 {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        .comic-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 25px;
+        }
+
+        .panel {
+            background: white;
+            border: 2px solid #222;
+            border-radius: 10px;
+            padding: 15px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+        }
+
+        .panel-title {
+            text-align: center;
+            margin-top: 0;
+            margin-bottom: 12px;
+        }
+
+        .comic-image {
+            display: block;
+            width: 100%;
+            height: 450px;
+            object-fit: contain;
+            background: white;
+            border: 1px solid #999;
+        }
+
+        .description {
+            font-size: 15px;
+            line-height: 1.5;
+            margin-top: 12px;
+        }
+
+        .dialogue {
+            margin-top: 10px;
+            padding: 12px;
+            background: #f5f5f5;
+            border-left: 5px solid #333;
+            border-radius: 5px;
+        }
+
+        .download-section {
+            text-align: center;
+            margin-top: 35px;
+            margin-bottom: 30px;
+        }
+
+        .download-button {
+            display: inline-block;
+            padding: 14px 25px;
+            background: #222;
+            color: white;
+            text-decoration: none;
+            border-radius: 6px;
+            font-weight: bold;
+        }
+
+        .download-button:hover {
+            background: #444;
+        }
+
+        .error-box {
+            padding: 30px;
+            text-align: center;
+            background: #fff0f0;
+            border: 1px solid red;
+            color: red;
+        }
+
+        @media (max-width: 800px) {
+
+            .comic-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .comic-image {
+                height: 400px;
+            }
+
+        }
+
+    </style>
+
+</head>
+
+<body>
+
+<div class="container">
+
+    <h1>🎨 ComicCraftAI</h1>
+
+    <div class="comic-grid">
+
+        {% for panel in panels %}
+
+        <div class="panel">
+
+            <h2 class="panel-title">
+                Panel {{ panel.panel_number }}
+            </h2>
+
+            <img
+                src="/static/panel_{{ panel.panel_number }}.png?v={{ panel.panel_number }}"
+                alt="Comic Panel {{ panel.panel_number }}"
+                class="comic-image"
+                onerror="this.style.display='none'; this.nextElementSibling.style.display='block';"
+            >
+
+            <div
+                class="error-box"
+                style="display:none;"
+            >
+                Image for Panel {{ panel.panel_number }} could not be loaded.
+            </div>
+
+            {% if panel.description %}
+
+            <p class="description">
+                {{ panel.description }}
+            </p>
+
+            {% endif %}
+
+            {% if panel.dialogue %}
+
+            <div class="dialogue">
+                <strong>
+                    💬 {{ panel.dialogue }}
+                </strong>
+            </div>
+
+            {% endif %}
+
+        </div>
+
+        {% endfor %}
+
+    </div>
+
+    <div class="download-section">
+
+        <a
+            href="/download/comic_preview.pdf"
+            class="download-button"
+        >
+            📄 Download Comic PDF
+        </a>
+
+    </div>
+
+</div>
+
+</body>
+
+</html>

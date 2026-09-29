@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>{{ title }}</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: #f4f4f4;
+            margin: 0;
+            padding: 40px;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: auto;
+            background: white;
+            padding: 30px;
+            border-radius: 15px;
+        }
+
+        h1 {
+            text-align: center;
+        }
+
+        label {
+            display: block;
+            margin-top: 15px;
+            font-weight: bold;
+        }
+
+        input,
+        textarea,
+        select {
+            width: 100%;
+            box-sizing: border-box;
+            padding: 12px;
+            margin-top: 5px;
+        }
+
+        textarea {
+            min-height: 120px;
+        }
+
+        button {
+            margin-top: 25px;
+            width: 100%;
+            padding: 15px;
+            cursor: pointer;
+        }
+
+        .error {
+            margin-top: 20px;
+            padding: 15px;
+            background: #ffe0e0;
+        }
+    </style>
+</head>
+
+<body>
+
+<div class="container">
+
+    <h1>🎨 ComicCraft AI</h1>
+
+    <p>
+        Create your own AI-powered comic adventure.
+    </p>
+
+    {% if error %}
+    <div class="error">
+        <strong>Error:</strong>
+        {{ error }}
+    </div>
+    {% endif %}
+
+    <form action="/generate" method="post">
+
+        <label>Story Idea</label>
+
+        <textarea
+            name="story_prompt"
+            placeholder="Example: A young hero discovers a magical forest..."
+            required
+        ></textarea>
+
+
+        <label>Character Name</label>
+
+        <input
+            type="text"
+            name="character_name"
+            placeholder="Alex"
+            required
+        >
+
+
+        <label>Setting</label>
+
+        <input
+            type="text"
+            name="setting"
+            placeholder="Enchanted Forest"
+            required
+        >
+
+
+        <label>Tone</label>
+
+        <input
+            type="text"
+            name="tone"
+            placeholder="Funny and adventurous"
+            required
+        >
+
+
+        <label>Art Style</label>
+
+        <input
+            type="text"
+            name="art_style"
+            placeholder="Colorful cartoon comic"
+            required
+        >
+
+
+        <button type="submit">
+            🚀 Generate Comic
+        </button>
+
+    </form>
+
+</div>
+
+</body>
+</html>
