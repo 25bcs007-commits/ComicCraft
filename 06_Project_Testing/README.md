@@ -26,5 +26,18 @@ Expected Result: AI generates characters and dialogues.
 Input: A short story prompt
 Expected Result: AI generates a complete comic-style output.
 
-## Final Testing
-The complete application should be tested before the final demonstration.
+Test Results
+
+Test Case| Expected Result| Actual Result| Status
+Valid story idea| Comic story should be generated| Comic story generated successfully| Pass
+Story with multiple characters| Characters should be generated correctly| Characters generated successfully| Pass
+Short story prompt| Complete comic story should be generated| Comic story generated successfully| Pass
+Invalid or empty input| User should receive an appropriate message| Validation message displayed| Pass
+
+Final Testing
+
+The ComicCraft application was tested with different story inputs, characters, scenes and dialogues. The application successfully processed the user input and generated comic story content using Gemini AI.
+
+Conclusion
+
+The testing confirms that the ComicCraft application works as expected. The main features were tested successfully and the application is ready for demonstration.
