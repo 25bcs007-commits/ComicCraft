@@ -29,6 +29,13 @@ Project Documentation
 ### Phase 8
 Project Demonstration
 
+## Team members
+Member 1:Subashini.N
+Member 2:Tamizh selvi.V
+Member 3:Nandhini.R
+Member 4:Jaya sri.V
+Member 5:Archana.C
+
 ## Team Responsibilities
 - Member 1: Brainstorming and story ideas
 - Member 2: Gemini AI and prompt creation
