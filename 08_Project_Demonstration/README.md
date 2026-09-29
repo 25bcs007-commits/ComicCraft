@@ -28,3 +28,5 @@ The complete project demonstration will be recorded with screen sharing and stud
 
 ## Conclusion
 ComicCraft demonstrates the use of Gemini Generative AI for creative comic story creation.
+
+Google Drive Demo Video: https://drive.google.com/file/d/1eZzNy1A_yNXwCJ20CuG9pQeJCUlHgHe4/view?usp=sharing
