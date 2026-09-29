@@ -1,5 +1,4 @@
-07. Project Documentation
-
+07.PROJECT DOCUMENTATION
 Project Name
 
 ComicCraft - AI Comic Story Creator using Gemini Models
